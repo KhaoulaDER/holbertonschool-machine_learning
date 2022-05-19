@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-
+"""
+    Tensorflow Training Module
+"""
 import tensorflow.compat.v1 as tf
 
 def evaluate(X, Y, save_path):
-    """evaluates a previously trained neural network"""
+    """
+    evaluates a previously trained neural network
+    """
     with tf.Session() as sess:
         saver = tf.train.import_meta_graph(save_path + '.meta')
         saver.restore(sess, save_path)
